@@ -13,3 +13,4 @@
 
 ## Accessibility
   While learning about accessibility in HTML, I explored ARIA labels, alt text, and tab index. I learned that ARIA labels (aria-) help screen readers understand elements that aren’t clear by default.Some of the attributes for ARIA are: aria-label (adds a label for screen readers), aria-hidden (hides elements from assistive technologies), aria-describedby (provides a description), and aria-required (marks fields as required). Alt text (alt) describes images for users who cannot see them and also helps search engines. Tab index (tabindex) controls the order in which elements are focused when navigating a page using the keyboard. Using these features, I can make web pages more accessible for all users, including those using assistive technologies.
+  
