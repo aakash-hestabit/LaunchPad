@@ -10,26 +10,26 @@ On day 1, I got hands-on with semantic HTML5, learning to structure web pages us
   On day 2, I learned about CSS, about various selectors including attribute selectors, sibling selectors. I explored the box model, specificity rules, and units like `rem`, `vw`, and `vh`. I practiced layout techniques using Flexbox and Grid for 2D layouts, and focused on responsive design principles with a mobile-first approach and media queries. Finally, I got hands-on with animations and transitions to make web pages more interactive and visually appealing.
         | Flexbox (Large) | Grid (Large) |
 |-----------------|------------------|
-| ![](image-1.png) | ![](image-4.png) |
+| ![](./screenshots/image-1.png) | ![](./screenshots/image-4.png) |
 
 | Flexbox (Medium) | Grid (Medium) |
 |-----------------|--------------|
-| ![](image-2.png)| ![](image-5.png) |
+| ![](./screenshots/image-2.png)| ![](./screenshots/image-5.png) |
 
 | Flexbox (Small) | Grid (Small) |
 |---------------|--------------|
-| ![](image-3.png)  | ![](image-6.png) |
+| ![](./screenshots/image-3.png)  | ![](./screenshots/image-6.png) |
 
 
 ## Day 3
 On day 3, I learned JavaScript fundamentals, working with `let` and `const`, arrow functions, and manipulating arrays and objects using methods like `map`, `filter`, and `reduce`. I practiced these concepts through mini-challenges that strengthened my problem-solving skills. I also explored DOM manipulation by building components such as a navbar toggle and dropdown FAQs. Additionally, I used event listeners to create features like a counter and key-based interactions. Als, I built an interactive FAQ accordion where clicking each question expands or collapses the answer.
 | Initial State | Expanded FAQ Section |
 |---------------|--------------------|
-| ![](image-7.png) | ![](image-8.png) |
+| ![](./screenshots/image-7.png) | ![](./screenshots/image-8.png) |
 
 | Opening Specific Answers | Handling Overflow using Scrolling |
 |-------------------------|-----------------|
-| ![](image-9.png) | ![](image-10.png) |
+| ![](./screenshots/image-9.png) | ![](./screenshots/image-10.png) |
 
 ## Day 4
 On this day, I focused on modular JavaScript functions and explored LocalStorage for persisting data across page reloads. I practiced debugging using DevTools breakpoints and watch expressions and built custom JS utilities like debounce, throttle. As a hands-on project, I created a Todo app that persists tasks on refresh using LocalStorage including all the basic functionalities of Adding, Editing, Deleting and marking tasks as complete. Additionally, I learned error handling with `try/catch` and implemented an error boundary folder to log errors systematically in `logs/errors.md`.
@@ -38,11 +38,11 @@ On this day, I focused on modular JavaScript functions and explored LocalStorage
 
 | Initial Loading (Tasks from LocalStorage) | Modal for Adding/Editing Tasks |
 |-----------------------------------------|-------------------------------|
-| ![](image-11.png) | ![](image-12.png) |
+| ![](./screenshots/image-11.png) | ![](./screenshots/image-12.png) |
 
 | Responsive Modal | Fully Responsive Todo App |
 |-----------------|--------------------------|
-| ![](image-13.png) | ![](image-14.png) |
+| ![](./screenshots/image-13.png) | ![](./screenshots/image-14.png) |
 
 ## Day 5
 
@@ -56,16 +56,16 @@ Finally, I made the page fully responsive using CSS media queries, so it works w
 ### E-commerce Product Listing Page
 | Landing Page | Product Listing (Large Screen) |
 |--------------|-------------------------------|
-| ![](image-15.png) | ![](image-16.png) |
+| ![](./screenshots/image-15.png) | ![](./screenshots/image-16.png) |
 
 | Sorted Products (High → Low) | Product Listing (Large Screen) |
 |-------------------------------|-------------------------------|
-| ![](image-17.png) | ![](image-18.png) |
+| ![](./screenshots/image-17.png) | ![](./screenshots/image-18.png) |
 
 | Product Listing (Medium Screen) | Product Listing (Mobile Screen) |
 |-------------------------------|-------------------------------|
-| ![](image-19.png) | ![](image-20.png) |
+| ![](./screenshots/image-19.png) | ![](./screenshots/image-20.png) |
 
 | Product Listing (Extra Small Screen) | Search Bar Filtering |
 |------------------------------------|-------------------|
-| ![](image-21.png) | ![](image-22.png) |
+| ![](./screenshots/image-21.png) | ![](./screenshots/image-22.png) |
