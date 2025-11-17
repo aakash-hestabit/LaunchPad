@@ -32,9 +32,9 @@ On day 3, I learned JavaScript fundamentals, working with `let` and `const`, arr
 | ![](image-9.png) | ![](image-10.png) |
 
 ## Day 4
-On this day, I focused on modular JavaScript functions and explored LocalStorage for persisting data across page reloads. I practiced debugging using DevTools breakpoints and watch expressions and built custom JS utilities like debounce, throttle. As a hands-on project, I created a Todo app that persists tasks on refresh using LocalStorage. Additionally, I learned error handling with `try/catch` and implemented an error boundary folder to log errors systematically in `logs/errors.md`.
+On this day, I focused on modular JavaScript functions and explored LocalStorage for persisting data across page reloads. I practiced debugging using DevTools breakpoints and watch expressions and built custom JS utilities like debounce, throttle. As a hands-on project, I created a Todo app that persists tasks on refresh using LocalStorage including all the basic functionalities of Adding, Editing, Deleting and marking tasks as complete. Additionally, I learned error handling with `try/catch` and implemented an error boundary folder to log errors systematically in `logs/errors.md`.
 
-## Todo App Project
+### Todo App ScreenShots
 
 | Initial Loading (Tasks from LocalStorage) | Modal for Adding/Editing Tasks |
 |-----------------------------------------|-------------------------------|
@@ -43,3 +43,29 @@ On this day, I focused on modular JavaScript functions and explored LocalStorage
 | Responsive Modal | Fully Responsive Todo App |
 |-----------------|--------------------------|
 | ![](image-13.png) | ![](image-14.png) |
+
+## Day 5
+
+On Day 5, I built an E-commerce product listing page using all the learnings from Week 2. The page layout was created using Flexbox and semantic HTML. I used the fetch API along with async/await to get products from DummyJSON, and wrapped the fetching logic in a try/catch block to prevent the app from breaking in case of errors.  
+
+For each product, I created a card element and displayed it on the page with the product title, image, and price. I practiced mouse events like mouseenter and mouseleave to manipulate the displayed image on the cards. I also implemented a sorting functionality using a button, which sorts the products from high price to low price when clicked. Additionally, I added debouncing to the search bar to optimize performance while filtering products.  
+
+Finally, I made the page fully responsive using CSS media queries, so it works well on different screen sizes.
+
+
+### E-commerce Product Listing Page
+| Landing Page | Product Listing (Large Screen) |
+|--------------|-------------------------------|
+| ![](image-15.png) | ![](image-16.png) |
+
+| Sorted Products (High → Low) | Product Listing (Large Screen) |
+|-------------------------------|-------------------------------|
+| ![](image-17.png) | ![](image-18.png) |
+
+| Product Listing (Medium Screen) | Product Listing (Mobile Screen) |
+|-------------------------------|-------------------------------|
+| ![](image-19.png) | ![](image-20.png) |
+
+| Product Listing (Extra Small Screen) | Search Bar Filtering |
+|------------------------------------|-------------------|
+| ![](image-21.png) | ![](image-22.png) |
