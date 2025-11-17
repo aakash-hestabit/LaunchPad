@@ -1,0 +1,35 @@
+p{
+    display: flex;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    grid-area: text;
+}
+.btn{
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 10px;
+    border:none;
+}
+#increase-btn{
+    grid-area: i-btn;
+}
+#decrease-btn{
+    grid-area: d-btn;
+}
+main{
+    display: grid;
+    grid-template-areas:
+    "text text text text "
+    " . i-btn  d-btn .";
+
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    padding: 10px;
+    gap: 10px;
+
+}
+
