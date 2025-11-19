@@ -1,0 +1,80 @@
+{
+  "total_words": 93404,
+  "unique_words_length": 29,
+  "unique_words": {
+    "laboris": 3179,
+    "exercitation": 3250,
+    "proident": 3190,
+    "labore": 3257,
+    "pariatur": 3210,
+    "commodo": 3212,
+    "incididunt": 3149,
+    "consequat": 3298,
+    "aliqua": 3151,
+    "excepteur": 3064,
+    "occaecat": 3245,
+    "adipisicing": 3249,
+    "consectetur": 3357,
+    "deserunt": 3233,
+    "mollit": 3217,
+    "officia": 3302,
+    "ullamco": 3208,
+    "cillum": 3269,
+    "eiusmod": 3226,
+    "nostrud": 3248,
+    "fugiat": 3250,
+    "dolore": 3272,
+    "veniam": 3192,
+    "cupidatat": 3168,
+    "laborum": 3221,
+    "tempor": 3187,
+    "reprehenderit": 3190,
+    "voluptate": 3186,
+    "aliquip": 3224
+  },
+  "longest_word": "reprehenderit",
+  "smallest_word": "dolore",
+  "top_n_most_repeated_words": [
+    {
+      "word": "consectetur",
+      "count": 3357
+    },
+    {
+      "word": "officia",
+      "count": 3302
+    },
+    {
+      "word": "consequat",
+      "count": 3298
+    },
+    {
+      "word": "dolore",
+      "count": 3272
+    },
+    {
+      "word": "cillum",
+      "count": 3269
+    },
+    {
+      "word": "labore",
+      "count": 3257
+    },
+    {
+      "word": "exercitation",
+      "count": 3250
+    },
+    {
+      "word": "fugiat",
+      "count": 3250
+    },
+    {
+      "word": "adipisicing",
+      "count": 3249
+    },
+    {
+      "word": "nostrud",
+      "count": 3248
+    }
+  ],
+  "total_time": "48.76"
+}

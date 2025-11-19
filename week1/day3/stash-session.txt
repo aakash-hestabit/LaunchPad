@@ -1,0 +1,105 @@
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git status 
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git branch 
+* main
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git branch demo 
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git checkout demo 
+Switched to branch 'demo'
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git branch 
+* demo
+  main
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git add .
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git commit -m"a new commit"
+[main 00379ed] a new commit
+ 1 file changed, 4 insertions(+)
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git checkout demo 
+Switched to branch 'demo'
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git stash 
+Saved working directory and index state WIP on demo: 20c3ebe last commit
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git checkout main 
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 323 bytes | 323.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/aakash-hestabit/launchpad-git-practice.git
+   20c3ebe..00379ed  main -> main
+
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git checkout demo 
+Switched to branch 'demo'
+
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git pull origin main 
+From https://github.com/aakash-hestabit/launchpad-git-practice
+ * branch            main       -> FETCH_HEAD
+Updating 20c3ebe..00379ed
+Fast-forward
+ practice.md | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git stash apply 
+Auto-merging practice.md
+CONFLICT (content): Merge conflict in practice.md
+On branch demo
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   practice.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git status 
+On branch demo
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   practice.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git status 
+On branch demo
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   practice.md
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git add . 
+
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git commit -m"successfully used stash"
+[demo 3b4dd3a] successfully used stash
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+
+
+ so the stash workflow(how i have practiced it) goes like this :
+
+ i was on main branch, i created a demo branch 
+ i made some changes to the main branch's file and pushed it to remote 
+ i came back to demo branch and made changes to some file 
+ now i stashed my work in demo and pulled the code from main 
+ then i did stash apply to get back my unfinished work 
+ i got some merge conflicts that i resolved and kept both the changes as the changes were done to the same file 
+ 

@@ -1,0 +1,27 @@
+{
+  "name": "week1",
+  "version": "1.0.0",
+  "description": "On day 1 i explored the system’s Node.js environment and NVM setup.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "cd day5 && bash validate.sh && eslint . --fix && prettier --write . && git add ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aakash-hestabit/Launchpad_week1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aakash-hestabit/Launchpad_week1/issues"
+  },
+  "homepage": "https://github.com/aakash-hestabit/Launchpad_week1#readme",
+  "devDependencies": {
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^9.1.7"
+  }
+}

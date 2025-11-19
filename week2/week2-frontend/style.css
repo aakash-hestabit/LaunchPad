@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f4f4f4;
+}
+
+.header {
+    padding: 20px;
+    background: black;
+    color: white;
+}
+
+.home_main {
+    margin-top: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: blueviolet;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}

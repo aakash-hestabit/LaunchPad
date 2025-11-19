@@ -1,0 +1,80 @@
+{
+  "total_words": 93404,
+  "unique_words_length": 29,
+  "unique_words": [
+    "laboris",
+    "exercitation",
+    "proident",
+    "labore",
+    "pariatur",
+    "commodo",
+    "incididunt",
+    "consequat",
+    "aliqua",
+    "excepteur",
+    "occaecat",
+    "adipisicing",
+    "consectetur",
+    "deserunt",
+    "mollit",
+    "officia",
+    "ullamco",
+    "cillum",
+    "eiusmod",
+    "nostrud",
+    "fugiat",
+    "dolore",
+    "veniam",
+    "cupidatat",
+    "laborum",
+    "tempor",
+    "reprehenderit",
+    "voluptate",
+    "aliquip"
+  ],
+  "longest_word": "reprehenderit",
+  "smallest_word": "dolore",
+  "top_n_most_repeated_words": [
+    {
+      "word": "consectetur",
+      "count": 3357
+    },
+    {
+      "word": "officia",
+      "count": 3302
+    },
+    {
+      "word": "consequat",
+      "count": 3298
+    },
+    {
+      "word": "dolore",
+      "count": 3272
+    },
+    {
+      "word": "cillum",
+      "count": 3269
+    },
+    {
+      "word": "labore",
+      "count": 3257
+    },
+    {
+      "word": "exercitation",
+      "count": 3250
+    },
+    {
+      "word": "fugiat",
+      "count": 3250
+    },
+    {
+      "word": "adipisicing",
+      "count": 3249
+    },
+    {
+      "word": "nostrud",
+      "count": 3248
+    }
+  ],
+  "total_time": "41.64ms"
+}

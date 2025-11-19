@@ -1,0 +1,129 @@
+This .txt file contains the terminal logs of my git bisect practice
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git init 
+Initialized empty Git repository in /home/aakash/Desktop/Launchpad/day3/.git/
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git add .
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git commit -m "first commit"
+
+git branch -M main
+
+git remote add origin https://github.com/aakash-hestabit/launchpad-git-practice.git
+
+git push -u origin main
+[master (root-commit) 51e8a31] first commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 practice.md
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 209 bytes | 209.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/aakash-hestabit/launchpad-git-practice.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git add . 
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git commit -m " second commit"
+[main d86352e]  second commit
+ 1 file changed, 1 insertion(+)
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git add . 
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git commit -m " third commit"
+[main f394c70]  third commit
+ 1 file changed, 2 insertions(+)
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git add . 
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git commit -m " fourth commit"
+[main dccf165]  fourth commit
+ 1 file changed, 2 insertions(+)
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git add . 
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git commit -m " fifth commit"
+[main 33c5426]  fifth commit
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git add . 
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git commit -m " sixth commit"
+[main 7589c65]  sixth commit
+ 1 file changed, 2 insertions(+)
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git add . 
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git commit -m " seventh commit"
+[main ee3dd13]  seventh commit
+ 1 file changed, 2 insertions(+)
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git add . 
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git commit -m " eighth commit"
+[main c3661aa]  eighth commit
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git add . 
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git commit -m " ninth commit"
+[main fcc19db]  ninth commit
+ 1 file changed, 2 insertions(+)
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git bisect start 
+status: waiting for both good and bad commits
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git bisect bad
+status: waiting for good commit(s), bad commit known
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git log --oneline
+fcc19db (HEAD -> main)  ninth commit
+c3661aa  eighth commit
+ee3dd13  seventh commit
+7589c65  sixth commit
+33c5426  fifth commit
+dccf165  fourth commit
+f394c70  third commit
+d86352e  second commit
+51e8a31 (origin/main) first commit
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git bisect good 51e8a31
+Bisecting: 3 revisions left to test after this (roughly 2 steps)
+[33c54264155e5e8c920ce9f988f93d911826c35d]  fifth commit
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git bisect bad
+Bisecting: 1 revision left to test after this (roughly 1 step)
+[f394c707b3c9287959da61a31eb77919afcddb52]  third commit
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git bisect good
+ Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[dccf1659a3bf534b6c1fc84f7042dd31af7d7318]  fourth commit
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$  git bisect bad
+dccf1659a3bf534b6c1fc84f7042dd31af7d7318 is the first bad commit
+commit dccf1659a3bf534b6c1fc84f7042dd31af7d7318
+Author: aakash-hestabit <aakash@hestabit.in>
+Date:   Wed Nov 5 18:04:45 2025 +0530
+
+     fourth commit
+
+ practice.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git bisect reset 
+Previous HEAD position was dccf165  fourth commit
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 8 commits.
+  (use "git push" to publish your local commits)
+
+aakash@hestabit-Latitude-3450:~/Desktop/Launchpad/day3$ git revert dccf165
+Auto-merging practice.md
+CONFLICT (content): Merge conflict in practice.md
+error: could not revert dccf165...  fourth commit
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
