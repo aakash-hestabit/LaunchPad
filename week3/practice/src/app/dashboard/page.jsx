@@ -1,5 +1,5 @@
+'use client'
 import React, { useState } from 'react'
-import BarChart from './Barchart'
 import Card from '@/components/ui/Card'
 import Modal from '@/components/ui/Modal';
 

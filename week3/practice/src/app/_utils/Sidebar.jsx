@@ -1,11 +1,12 @@
 'use client'
 import React, { useState } from 'react';
+import Link from 'next/link'
 import { AiOutlineDashboard } from "react-icons/ai";
 import { FiLayout } from "react-icons/fi";
 import { TbBrandPagekit } from "react-icons/tb";
 import { FaChartSimple, FaTable, FaChevronDown, FaChevronRight } from "react-icons/fa6";
 
-const Sidebar = ({ handleSidebarClick, setPageNumber, handleLayoutClick}) => {
+const Sidebar = () => {
   const [showPages, setShowPages] = useState(false);
   const [showLayouts, setShowLayouts] = useState(false);
 
@@ -14,13 +15,12 @@ const Sidebar = ({ handleSidebarClick, setPageNumber, handleLayoutClick}) => {
      
       <section className='flex flex-col text-neutral-400'>
         <p className='text-xs font-semibold mb-2 tracking-wider'>CORE</p>
-        <p
+        <Link href="/dashboard"><p
           className='flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors'
-          onClick={() => handleSidebarClick("dashboard")}
         >
           <AiOutlineDashboard className="text-xl text-gray-300" />
           <span className='text-gray-200 font-medium'>Dashboard</span>
-        </p>
+        </p></Link>
       </section>
 
    
@@ -30,7 +30,7 @@ const Sidebar = ({ handleSidebarClick, setPageNumber, handleLayoutClick}) => {
         
         <p
           className='flex items-center justify-between gap-2 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors'
-          onClick={() => setShowLayouts(!showLayouts)}
+          onClick={()=>setShowLayouts(!showLayouts)}
         >
           <span className='flex gap-2'>
             <FiLayout className="text-xl text-gray-300" />
@@ -41,31 +41,30 @@ const Sidebar = ({ handleSidebarClick, setPageNumber, handleLayoutClick}) => {
 
    
         {showLayouts && (
-          <ul className='flex flex-col gap-1 pl-4 pt-2 '>
-            <li>
+          <ul className='flex flex-col gap-1 pl-4 pt-1 '>
+            <Link href="/layout/1"><li>
               <button
                 className='flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors w-full'
-                onClick={() => handleLayoutClick(1)}
+                
               >
                 <span className='text-gray-200 font-medium'>Layout 1</span>
               </button>
-            </li>
-            <li>
+            </li></Link>
+            <Link href="/layout/2"><li>
               <button
                 className='flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors w-full'
-                onClick={() => handleLayoutClick(2)}
+               
               >
                 <span className='text-gray-200 font-medium'>Layout 2</span>
               </button>
-            </li>
-            <li>
+            </li></Link>
+            <Link href="/layout/3"><li>
               <button
                 className='flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors w-full'
-                onClick={() =>handleLayoutClick(3)}
               >
                 <span className='text-gray-200 font-medium'>Layout 3</span>
               </button>
-            </li>
+            </li></Link>
           </ul>
         )}
 
@@ -83,39 +82,35 @@ const Sidebar = ({ handleSidebarClick, setPageNumber, handleLayoutClick}) => {
 
     
         {showPages && (
-          <ul className='flex flex-col gap-1 pl-4 pt-2'>
-            <li>
+          <ul className='flex flex-col gap-1 pl-4 pt-1'>
+            <Link href="/page/our"><li>
               <button
                 className='flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors w-full'
-                onClick={() => setPageNumber(1)}
               >
-                <span className='text-gray-200 font-medium'>Page 1</span>
+                <span className='text-gray-200 font-medium'>Our Page</span>
               </button>
-            </li>
-            <li>
+            </li></Link>
+            <Link href="/page/their"><li>
               <button
                 className='flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors w-full'
-                onClick={() => setPageNumber(2)}
               >
-                <span className='text-gray-200 font-medium'>Page 2</span>
+                <span className='text-gray-200 font-medium'>Their Page</span>
               </button>
-            </li>
-            <li>
+            </li></Link>
+            <Link href="/page/your"><li>
               <button
                 className='flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors w-full'
-                onClick={() => setPageNumber(3)}
               >
-                <span className='text-gray-200 font-medium'>Page 3</span>
+                <span className='text-gray-200 font-medium'>Your Page</span>
               </button>
-            </li>
-            <li>
+            </li></Link>
+            <Link href="/page/mine"><li>
               <button
                 className='flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors w-full'
-                onClick={() => setPageNumber(4)}
               >
-                <span className='text-gray-200 font-medium'>Page 4</span>
+                <span className='text-gray-200 font-medium'>My Page</span>
               </button>
-            </li>
+            </li></Link>
           </ul>
         )}
       </section>
@@ -125,14 +120,12 @@ const Sidebar = ({ handleSidebarClick, setPageNumber, handleLayoutClick}) => {
         <p className='text-xs font-semibold mb-2 tracking-wider'>ADDONS</p>
         <p
           className='flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors'
-          onClick={() => handleSidebarClick("charts")}
         >
           <FaChartSimple className="text-xl text-gray-300" />
           <span className='text-gray-200 font-medium'>Charts</span>
         </p>
         <p
           className='flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors'
-          onClick={() => handleSidebarClick("tables")}
         >
           <FaTable className="text-xl text-gray-300" />
           <span className='text-gray-200 font-medium'>Tables</span>

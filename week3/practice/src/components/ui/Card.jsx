@@ -9,7 +9,7 @@ const Card = ({height='120px',width='310px',label='Default Label',details='This 
         <p className=' border border-gray-500 px-5 py-3 h-[60%] flex items-center rounded-t-md font-bold tracking-wide'>{label}</p>
         
         <button className='flex items-center justify-between border border-gray-500 h-[40%] rounded-b-md w-full px-5 text-sm font-semibold cursor-pointer' 
-            onClick={()=>{handleModalOpen(details);console.log(details)}}>
+            onClick={()=>{handleModalOpen(details)}}>
             <span>View Details</span> <FaChevronRight/> 
         </button>
     </article>
