@@ -4,15 +4,19 @@ import Link from 'next/link'
 import { AiOutlineDashboard } from "react-icons/ai";
 import { FiLayout } from "react-icons/fi";
 import { TbBrandPagekit } from "react-icons/tb";
-import { FaChartSimple, FaTable, FaChevronDown, FaChevronRight } from "react-icons/fa6";
+import { FaChartSimple, FaTable, FaChevronDown, FaChevronRight, FaMarsAndVenus } from "react-icons/fa6";
+import { TiThMenu } from "react-icons/ti";
 
 const Sidebar = () => {
   const [showPages, setShowPages] = useState(false);
   const [showLayouts, setShowLayouts] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true);
 
   return (
-    <aside className='flex flex-col py-6 px-4 bg-[#363636] gap-8 w-64 h-full'>
-     
+    <aside className={`flex flex-col py-6 px-4 bg-[#363636] gap-8 w-64 h-full absolute ${showSidebar ? "sm:relative" : "sm:absolute -left-full"}`}>
+     <button className='fixed top-3 left-80 cursor-pointer text-2xl p-2 box-border' onClick={()=>setShowSidebar(!showSidebar)}><TiThMenu/></button>
+      {showSidebar &&
+      <>
       <section className='flex flex-col text-neutral-400'>
         <p className='text-xs font-semibold mb-2 tracking-wider'>CORE</p>
         <Link href="/dashboard"><p
@@ -131,6 +135,7 @@ const Sidebar = () => {
           <span className='text-gray-200 font-medium'>Tables</span>
         </p>
       </section>
+      </>}
     </aside>
   );
 }
