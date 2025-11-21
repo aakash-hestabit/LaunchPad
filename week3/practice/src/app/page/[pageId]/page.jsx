@@ -10,7 +10,7 @@ const page = async({params}) => {
         return notFound();
     }
   return (
-    <div>this is {pageId} page</div>
+    <div className='flex items-center justify-center'>this is {pageId} page</div>
   )
 }
 

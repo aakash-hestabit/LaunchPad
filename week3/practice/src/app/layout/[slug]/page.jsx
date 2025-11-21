@@ -5,7 +5,7 @@ const Page =  async({params}) => {
   const layout_no = params1.slug;
   
   return (
-    <div>this is layout number  no {layout_no}</div>
+    <div className='flex items-center justify-center flex-1'>this is layout number  no {layout_no}</div>
 
   )
 }
