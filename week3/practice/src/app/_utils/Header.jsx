@@ -6,7 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 const Header = ({setShowSidebar}) => {
     
     return (
-        <header className='flex py-3 px-6 items-center justify-between flex-wrap bg-[#4e4d4d] gap-y-2'>
+        <header className='flex py-3 px-6 items-center justify-between flex-wrap bg-[#4e4d4d] gap-y-2 w-full '>
             <span className="flex gap-4">
                 <h1 className='font-bold text-2xl min-w-[177px] text-[#ddd8d8] '>Start Bootstrap</h1><span onClick={()=>setShowSidebar(prev=>!prev)} className="text-2xl box-border p-1 cursor-pointer"><GiHamburgerMenu/></span>
             </span>

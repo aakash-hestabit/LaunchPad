@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { AiOutlineDashboard } from "react-icons/ai";
 import { FiLayout } from "react-icons/fi";
 import { TbBrandPagekit } from "react-icons/tb";
-import { FaChartSimple, FaTable, FaChevronDown, FaChevronRight, FaMarsAndVenus } from "react-icons/fa6";
+import { FaChartSimple, FaTable, FaChevronDown, FaChevronRight } from "react-icons/fa6";
 import { TiThMenu } from "react-icons/ti";
 import { FaChevronLeft } from 'react-icons/fa';
 
@@ -13,7 +13,7 @@ const Sidebar = () => {
   const [showLayouts, setShowLayouts] = useState(false);
 
   return (
-    <aside className={`flex flex-col py-6 px-4 bg-[#363636] gap-8 w-64 h-[100vh] `}>
+    <aside className={`flex flex-col py-6 px-4 bg-[#363636] gap-8 w-64 min-h-full`}>
       {
         <>
           <section className='flex flex-col text-neutral-400'>

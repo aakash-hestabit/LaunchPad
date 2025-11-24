@@ -11,7 +11,7 @@ const Hero = () => {
     };
 
     return (
-        <section className="bg-gradient-to-r from-indigo-600 to-blue-500 text-white text-center py-20 px-6 sm:px-12 flex flex-col items-center">
+        <section className="bg-linear-to-r from-indigo-600 to-blue-500 text-white text-center py-20 px-6 sm:px-12 flex flex-col items-center">
             <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4">
                 The Future of SaaS Solutions
             </h1>

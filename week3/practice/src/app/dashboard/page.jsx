@@ -51,7 +51,7 @@ const Dashboard = () => {
     <section className='px-7 py-8'>
       <h1 className='font-bold text-5xl'>Dashboard</h1>
       <p className='w-full bg-[#f0f0f0] px-5 py-2 font-semibold text-lg my-3 rounded-md text-gray-500'>DashBoard</p>
-      <section className='flex justify-center flex-wrap gap-2 items-start xs:justify-center sm:justify-center md:justify-between'>
+      <section className='flex justify-center flex-wrap gap-2 items-start xs:justify-center md:justify-between'>
         {
           cards.map((card, index) => (
             <Card key={index} label={card.label} color={card.color} details={card.details} handleModalOpen={handleModalOpen} />
