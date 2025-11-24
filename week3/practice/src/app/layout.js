@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./_utils/Sidebar";
 import Header from "./_utils/Header";
+import LoginMiddleware from "./_utils/LoginMiddleware";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
+        <LoginMiddleware/>
         <Header setShowSidebar = {setShowSidebar}/>
         <main className="flex h-full">
           {showSidebar && <Sidebar/>}

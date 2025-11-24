@@ -72,7 +72,7 @@ const Dashboard = () => {
           </ChartCard>
         </div>
       </section>
-      <section className=" p-4">
+      <section className=" p-4 overflow-x-auto">
         <h2 className="text-2xl font-semibold mb-4 flex gap-4"> <FaTable/> Data Table Example</h2>
         <Table />
       </section>

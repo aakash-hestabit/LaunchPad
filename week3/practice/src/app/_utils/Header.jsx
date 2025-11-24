@@ -1,10 +1,11 @@
+'use client'
 import { CgProfile } from "react-icons/cg";
 import {  FaSearch } from "react-icons/fa";
 import { GoTriangleDown } from "react-icons/go";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Link from "next/link";
 
 const Header = ({setShowSidebar}) => {
-    
     return (
         <header className='flex py-3 px-6 items-center justify-between flex-wrap bg-[#4e4d4d] gap-y-2 w-full '>
             <span className="flex gap-4">
@@ -19,11 +20,13 @@ const Header = ({setShowSidebar}) => {
                     <button className='cursor-pointer'><FaSearch /></button>
                 </form>
 
+                <Link href={'/dashboard/profile'}>
                 <button 
                     className="flex items-center gap-2 px-3 py-1 bg-gray-400 hover:bg-gray-200 rounded-full border border-gray-300">
                     <CgProfile className="text-xl text-gray-600" />
                     <GoTriangleDown className={`text-gray-500 text-sm`} />
                 </button>
+                </Link>
             </nav>
         </header>
     )
