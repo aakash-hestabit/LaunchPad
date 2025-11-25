@@ -33,9 +33,9 @@ const Users = () => {
   };
 
   return (
-    <div className="p-4 overflow-x-auto">
+    <div className="p-4 max-w-screen">
       <h2 className="text-2xl font-bold mb-4">Users List</h2>
-            <div className="overflow-x-auto max-w-full sm:rounded-lg">
+        <div className="overflow-x-auto max-w-full sm:rounded-lg">
 
         <table className="w-full text-sm text-left text-gray-500">
           <thead className="text-xs text-gray-700 uppercase bg-gray-200">

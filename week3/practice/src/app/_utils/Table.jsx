@@ -15,8 +15,8 @@ const Table = () => {
     ];
 
     return (
-        <div className="overflow-x-auto bg-white shadow-lg rounded-lg p-4 flex-1">
-            <table className="min-w-full table-auto">
+        <div className="overflow-x-auto bg-white shadow-lg rounded-lg p-4 max-w-screen">
+            <table className="w-full table-auto">
                 <thead>
                     <tr className="bg-gray-100 border-b">
                         <th className="py-2 px-4 text-left">ID</th>
