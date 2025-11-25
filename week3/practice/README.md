@@ -6,13 +6,13 @@ This is the login page. I have implemented a middleware that checks the user's l
 
 | **For Larger Screens** | **For Mobile Screens** |
 | ---------------------- | ---------------------- |
-| ![login page](image.png) | ![mobile screen](image-2.png) |
+| ![login page](./public/image.png) | ![mobile screen](./public/image-2.png) |
 
 Here is how the user's info is stored in the local storage:
 
 | **Local Storage Info** |
 | ---------------------- |
-| ![localstorage](image-1.png) |
+| ![localstorage](./public/image-1.png) |
 
 After login, the user is redirected to the home page.
 
@@ -22,7 +22,7 @@ After login, the user is redirected to the home page.
 
 | **For Larger Screens** | **For Mobile Screens** |
 | ---------------------- | ---------------------- |
-| ![landing page](image-3.png) | ![landing page](image-4.png) |
+| ![landing page](./public/image-3.png) | ![landing page](./public/image-4.png) |
 
 ---
 
@@ -34,8 +34,8 @@ The cards are rendered using a reusable component, and the popup modal that appe
 
 | **For Larger Screens** | **For Mobile Screens** |
 | ---------------------- | ---------------------- |
-| ![dashboard for larger screens](image-5.png) | ![dashboard on mobile screens](image-7.png) |
-| ![pop up modal for buttons](image-6.png) | ![pop up modal for screens](image-8.png) |
+| ![dashboard for larger screens](./public/image-5.png) | ![dashboard on mobile screens](./public/image-7.png) |
+| ![pop up modal for buttons](./public/image-6.png) | ![pop up modal for screens](./public/image-8.png) |
 
 ---
 
@@ -45,13 +45,13 @@ In the sidebar, I used some routes, and based on that, I implemented dynamic rou
 
 | **Dynamic Routes in VS Code** |
 | ---------------------------- |
-| ![dynamic routes](image-10.png) |
+| ![dynamic routes](./public/image-10.png) |
 
 Here, I have destructured the parameters and extracted the params array:
 
 | **Destructuring Params and Extracting Values** |
 | --------------------------------------------- |
-| ![destructuring params and extracting values](image-11.png) |
+| ![destructuring params and extracting values](./public/image-11.png) |
 
 ---
 
@@ -61,8 +61,8 @@ This is the users listing page for larger screens. Each page shows some details 
 
 | **For Larger Screens** | **For Mobile Screens** |
 | ---------------------- | ---------------------- |
-| ![users page](image-12.png) | ![users listing for mobile](image-14.png) |
-| ![pop up modal for user listing](image-13.png) | ![pop up modal for smaller screens](image-15.png) |
+| ![users page](./public/image-12.png) | ![users listing for mobile](./public/image-14.png) |
+| ![pop up modal for user listing](./public/image-13.png) | ![pop up modal for smaller screens](./public/image-15.png) |
 
 ---
 
@@ -72,7 +72,7 @@ This is the profile page for larger screens.
 
 | **For Larger Screens** | **For Smaller Screens** |
 | ---------------------- | ----------------------- |
-| ![profile page](image-16.png) | ![smaller screens](image-17.png) |
+| ![profile page](./public/image-16.png) | ![smaller screens](./public/image-17.png) |
 
 ---
 
