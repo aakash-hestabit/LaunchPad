@@ -1,20 +1,20 @@
 import winston from "winston";
 import path from "path";
-
+import { format, createLogger } from "winston";
+const { combine, printf, timestamp } = format;
 const logFilePath = path.join(process.cwd(), "src", "logs", "app.log");
 
-const logger = winston.createLogger({
+const logger = createLogger({
   level: "info",
-  format: winston.format.combine(
-    winston.format.colorize(),
-    winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-    winston.format.printf(
-      ({ timestamp, level, message }) => `${timestamp} : ${message}`
+  format: combine(
+    timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
+    printf(
+      ({ timestamp, level, message }) => `${timestamp} ${level} : ${message}`
     )
   ),
   transports: [
     new winston.transports.Console(),
-    new winston.transports.File({ filename: logFilePath}),
+    new winston.transports.File({ filename: logFilePath }),
   ],
 });
 
