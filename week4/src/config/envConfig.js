@@ -10,9 +10,9 @@ const loadEnvConfig = async () => {
   })
 
   const env = await new Promise(resolve => {
-    rl.question('Select environment (dev, prod, local) [local]: ', answer => {
+    rl.question('Select environment (dev, prod, local) [dev]: ', answer => {
       rl.close()
-      resolve(['dev','prod','local'].includes(answer) ? answer : 'local')
+      resolve(['dev','prod','local'].includes(answer) ? answer : 'dev')
     })
   })
 

@@ -8,7 +8,7 @@ const addressSchema = new Schema(
     state: { type: String, trim: true },
     postalCode: {
       type: String,
-      required:true,
+      required: true,
       trim: true,
     },
     country: { type: String, required: true, trim: true },
@@ -70,10 +70,10 @@ const userSchema = new Schema(
       minlength: 6,
     },
 
-    refreshToken: { type: String },
-    refreshTokenExpiresAt: {
-      expires: 60 * 60 * 24 * 7,
-      index: true
+    refreshToken: {
+      type: String,
+      expiresAfterSeconds: 60 * 60 * 24 * 7,
+      index: true,
     },
   },
   {
