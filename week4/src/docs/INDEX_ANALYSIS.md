@@ -6,7 +6,7 @@
 
 The product schema has the following indexes:
 
-!["index screenshot for users schema"](image1.png)
+!["index screenshot for users schema"](image-1.png)
 
 
 ### Indexed Fields:
