@@ -8,7 +8,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start": "nodemon src/index.js"
   },
   "dependencies": {
     "cookie-parser": "^1.4.7",
@@ -18,5 +18,8 @@
     "express-list-endpoints": "^7.1.1",
     "mongoose": "^9.0.0",
     "winston": "^3.18.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }

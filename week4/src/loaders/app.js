@@ -14,7 +14,7 @@ const loadApp = async () => {
 
     await dbLoader();
 
-    app.use(cors("*"));
+    app.use(cors({origin:"https://google.com"}));
     app.use(express.urlencoded({ extended: true, limit: "16kb" }));
     app.use(bodyParser.json());
     app.use(cookieParser());
