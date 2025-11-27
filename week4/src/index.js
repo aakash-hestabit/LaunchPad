@@ -1,5 +1,6 @@
 import loadApp from "./loaders/app.js";
 import logger from "./utils/logger.js";
+import { User } from "./models/User.js";
 const startServer = async () => {
   const app = await loadApp();
   logger.info("starting server");

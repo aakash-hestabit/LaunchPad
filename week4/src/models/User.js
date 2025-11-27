@@ -72,6 +72,9 @@ const userSchema = new Schema(
 
     refreshToken: {
       type: String,
+    },
+    refreshTokenExpiresAt: {
+      type: Date,
       expiresAfterSeconds: 60 * 60 * 24 * 7,
       index: true,
     },
