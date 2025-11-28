@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { demoRoute } from "../controllers/demoRouteController.js";
+import { demoRoute } from "../controllers/demoRoute.controller.js";
 const router = Router();
 
 router.route("/").get((req, res, next) => {
