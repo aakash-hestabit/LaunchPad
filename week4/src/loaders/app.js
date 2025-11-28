@@ -6,6 +6,7 @@ import dbLoader from "./db.js";
 import logger from "../utils/logger.js";
 import loadEnvConfig from "../config/envConfig.js";
 import router from "../routes/index.js";
+import { errorMiddleware } from "../middlewares/error.middleware.js";
 
 const loadApp = async () => {
   const app = express();
@@ -24,6 +25,7 @@ const loadApp = async () => {
     logger.info("Essential middlewares loaded");
 
     logger.info("App loaded successfully");
+    app.use(errorMiddleware)
     
   } catch (err) {
     logger.error("Error loading app: " + err.message);

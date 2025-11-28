@@ -78,6 +78,10 @@ const productSchema = new Schema(
       lowercase: true,
       trim: true,
     },
+    deletedAt : {
+      type : Date,
+      default: null
+    }
   },
   {
     timestamps: true,

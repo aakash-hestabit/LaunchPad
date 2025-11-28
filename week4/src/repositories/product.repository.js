@@ -34,7 +34,11 @@ export class ProductRepository {
   static async delete(id) {
     if (!mongoose.isValidObjectId(id)) return null;
 
-    return Product.findOneAndDelete({ _id: id });
+    return Product.findOneAndUpdate(
+      { _id: id, default: null },
+      { deletedAt: new Date() },
+      { new: true }
+    );
   }
 
   static async findPaginated({ page = 1, limit = 10, filter = {}, sort = {} }) {
