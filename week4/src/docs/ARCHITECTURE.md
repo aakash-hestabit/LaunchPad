@@ -2,6 +2,8 @@
 
 ## Folder Structure
 
+      ![folder structure](image-2.png)
+
     └── week4/
         ├── package.json
         └── src/
