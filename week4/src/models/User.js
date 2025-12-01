@@ -77,19 +77,20 @@ const userSchema = new Schema(
       type: Date,
       expiresAfterSeconds: 60 * 60 * 24 * 7,
       index: true,
+      default: null,
     },
   },
   {
     timestamps: true,
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
+    versionKey: false,
   }
 );
 
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
   this.password = await bcrypt.hash(this.password, 10);
-  next();
 });
 
 userSchema.methods.isPasswordCorrect = async function (password) {
