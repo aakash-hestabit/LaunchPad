@@ -4,7 +4,7 @@ const router = Router();
 
 router.route("/").get((req, res, next) => {
   try {
-    throw new Error("this is a intended error at health route");
+    throw new Error("this is an intended error at health route");
   } catch (e) {
     next(e);
   }
