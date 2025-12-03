@@ -10,7 +10,7 @@ export function errorMiddleware(err, req, res, next) {
     );
   }
 
-  logger.error(`code: ${err.code}, error: ${err}, timestamp: ${err.timestamp}, path: ${req.originalUrl}`)
+  logger.error(`code: ${err.code}, error: ${err}, timestamp: ${err.timestamp}, path: ${req.originalUrl}, stack: ${err.stack}`)
 
   res.status(err.statusCode).json({
     success: false,
