@@ -11,3 +11,6 @@ All services run on a shared Docker network (`app-net`).
 ### How it Works
 
 Frontend sends requests to the backend, which interacts with MongoDB and returns responses. Each service runs in its own container but communicates over the shared network.
+
+here is a diagram representation of the same
+![service diagram](image.png)
