@@ -5,3 +5,7 @@ the architecture consists of two backend service containers, each running a Node
 below is the diagram that demonstrates the flow of the service
 
 ![service diagram](image.png)
+
+below is the snapshot of the docker desktop that shows the running containers for the service
+
+![docker desktop snapshot of containers](image-1.png)
