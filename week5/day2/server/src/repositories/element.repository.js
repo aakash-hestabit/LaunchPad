@@ -6,7 +6,7 @@ const createElement = async (content) => {
 };
 
 const getAllElements = async () => {
-  return await Element.find().sort({ createdAt: -1 });
+  return await Element.find();
 };
 
 module.exports = {

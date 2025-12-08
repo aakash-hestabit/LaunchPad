@@ -2,15 +2,21 @@ const express = require("express");
 const mongoose = require("mongoose");
 const elementRoutes = require("./routes/elementRoutes.js");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 dotenv.config({ path: ".env" });
 
 const app = express();
-
+app.use(cors(
+  {
+    origin : "*"
+  }
+));
 app.use(express.json());
 
-app.use("/api/elements", elementRoutes);
 const mongourl = process.env.MONGO_URI;
+console.log(mongourl);
+
 mongoose
   .connect(mongourl)
   .then(() => {
@@ -20,6 +26,7 @@ mongoose
     console.error("MongoDB connection error:", err);
   });
 
+app.use("/api/elements", elementRoutes);
 app.get("/", (req, res) => {
   res.send("Hello from the Element API!");
 });
