@@ -31,6 +31,10 @@ app.get("/", (req, res) => {
   res.send("Hello from the Element API!");
 });
 
+app.get("/health",(_,res)=>{
+  res.status(200).json("server is running fine")
+})
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

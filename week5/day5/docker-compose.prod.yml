@@ -68,7 +68,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      - "5000:5000"
     networks:
       - app-net
     depends_on:
@@ -93,7 +92,7 @@ services:
       - mongo-data:/data/db
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "mongo", "--eval", "db.runCommand('ping')"]
+      test: ["CMD", "mongo", "--eval", "db.runCommand('ping').ok"]
       interval: 30s
       retries: 3
       start_period: 10s
