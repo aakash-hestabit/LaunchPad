@@ -2,7 +2,7 @@ const total_rqsts = 12;
 
 for (let i = 1; i <= total_rqsts; i++) {
   try {
-    const res = await fetch("http://localhost:3000/");
+    const res = await fetch("http://localhost:3001/");
 
     const text = await res.text();
 

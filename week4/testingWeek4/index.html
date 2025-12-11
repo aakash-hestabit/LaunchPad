@@ -7,7 +7,7 @@
   </head>
   <body>
     <script>
-    fetch("http://localhost:3000/products?includeDeleted=true").then(res=>res.json()).then(res=>console.log(res)).catch((e)=>{
+    fetch("http://localhost:3001/products?includeDeleted=true").then(res=>res.json()).then(res=>console.log(res)).catch((e)=>{
         console.log("error: ",e)
       })
     </script>
