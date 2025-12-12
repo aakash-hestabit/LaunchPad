@@ -92,7 +92,7 @@ services:
       - mongo-data:/data/db
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "mongo", "--eval", "db.runCommand('ping').ok"]
+      test: ["CMD", "mongosh", "--eval", "db.runCommand('ping').ok"]
       interval: 30s
       retries: 3
       start_period: 10s

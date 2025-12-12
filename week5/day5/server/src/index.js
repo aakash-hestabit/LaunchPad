@@ -32,6 +32,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/health",(_,res)=>{
+  console.log("health route hit");
+  
   res.status(200).json("server is running fine")
 })
 
