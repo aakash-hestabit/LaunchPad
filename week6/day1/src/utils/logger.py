@@ -1,6 +1,4 @@
 import logging
-import os
-
 def setup_logger():
     logging.basicConfig(
         filename='src/logs/pipeline.log',
