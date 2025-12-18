@@ -4,11 +4,8 @@ from ..features.feature_selector import select_features
 
 data_path = 'src/data/processed/final.csv' 
 
-X_train, y_train, feature_names = build_pipeline(data_path)
+X_train, X_test, y_train, y_test, feature_names = build_pipeline(data_path)
 
 feature_ranks = select_features(X_train, y_train, feature_names)
 
-print("\nTop 5 Most Important Features:")
 print(feature_ranks.head(5))
-
-print("\n✔ Deliverables generated in /features/ directory")

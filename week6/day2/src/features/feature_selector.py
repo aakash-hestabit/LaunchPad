@@ -2,6 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier
+import src.utils.logger as logger
+
+logger = logger.setup_logger()
 
 def select_features(X, y, feature_names):
     model = RandomForestClassifier(n_estimators=100, random_state=42)
@@ -14,5 +17,6 @@ def select_features(X, y, feature_names):
     sns.barplot(x=feat_imp.values[:15], y=feat_imp.index[:15])
     plt.title("Top 15 Feature Importances")
     plt.savefig('feature_importance.png')
+    logger.info("Feature importance plotted")
     
     return feat_imp
