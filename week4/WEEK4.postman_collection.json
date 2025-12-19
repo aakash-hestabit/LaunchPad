@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "923c5283-16a1-45dd-89c7-955bdae4fd65",
+		"name": "WEEK4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49857186",
+		"_collection_link": "https://aakash1-hestabit-7256182.postman.co/workspace/Aakash's-Workspace~79d97855-e995-4528-8358-90ade7478399/collection/49857186-923c5283-16a1-45dd-89c7-955bdae4fd65?action=share&source=collection_link&creator=49857186"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products?includeDeleted=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "includeDeleted",
+							"value": "true"
+						}
+					]
+				},
+				"description": "This request is sent to with a query parameter includeDeleted, the response will include the soft deleted documents if set to true else or by default it is set to false"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"newtest1111\",\n  \"email\": \"john.doe21@exa111sm1epfle1111.com\",\n  \"firstname\": \"John\",\n  \"lastname\": \"Doe\",\n  \"role\": \"user\",\n  \"addresses\": [\n    {\n      \"street\": \"123 Main St\",\n      \"city\": \"Sample City\",\n      \"state\": \"SC\",\n      \"postalCode\": \"12345\",\n      \"country\": \"Sample Country\"\n    }\n  ],\n  \"cart\": [],\n  \"products\": [],\n  \"password\": \"$2b$10$abcd1234...hashed_password...\",\n  \"createdAt\": \"2025-12-01T13:32:10.695Z\",\n  \"updatedAt\": \"2025-12-01T13:32:10.695Z\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users"
+					]
+				},
+				"description": "This request if sent as a GET request gets us a response which contains all the users from the backend or else if sent as POST request with the user's data will create a new user in the database"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/email/send",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"to\": \"someemail@gmail.com\",\n  \"subject\": \"random subject\",\n  \"message\": \"this is email message\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/email/send",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"email",
+						"send"
+					]
+				},
+				"description": "this request is sent with the email data and is used to schedule an email job using the BullMQ"
+			},
+			"response": []
+		},
+		{
+			"name": "Soft Delete",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"newtest1111\",\n  \"email\": \"john.doe21@exa111sm1epfle1111.com\",\n  \"firstname\": \"John\",\n  \"lastname\": \"Doe\",\n  \"role\": \"user\",\n  \"addresses\": [\n    {\n      \"street\": \"123 Main St\",\n      \"city\": \"Sample City\",\n      \"state\": \"SC\",\n      \"postalCode\": \"12345\",\n      \"country\": \"Sample Country\"\n    }\n  ],\n  \"cart\": [],\n  \"products\": [],\n  \"password\": \"$2b$10$abcd1234...hashed_password...\",\n  \"createdAt\": \"2025-12-01T13:32:10.695Z\",\n  \"updatedAt\": \"2025-12-01T13:32:10.695Z\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3001/products/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"products",
+						"123"
+					]
+				},
+				"description": "This request is used to soft delete a product, its flag indicating the product is deleted or not is set to true, which means the product is marked as deleted but is actually present in the database"
+			},
+			"response": []
+		}
+	]
+}
