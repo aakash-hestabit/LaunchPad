@@ -1,1 +1,1 @@
-["Property_Area_Semiurban", "Credit_History", "CoapplicantIncome", "LoanAmount", "ApplicantIncome", "Dependents", "Income_Ratio", "Loan_Amount_Term", "Loan_Per_Term", "Total_Income"]
+["Loan_Amount_Term", "Credit_History", "Self_Employed_No", "Income_Ratio", "CoapplicantIncome", "Gender_Male", "Self_Employed_Yes", "Loan_Per_Term", "ApplicantIncome", "Dependents", "Property_Area_Semiurban", "LoanAmount", "Education_Not Graduate", "Total_Income", "LoanAmount_log", "Property_Area_Urban"]
