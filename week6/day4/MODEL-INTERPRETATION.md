@@ -1,0 +1,2 @@
+this is what the error analysis says about the model:
+The SHAP summary plot shows that Credit History is the most influential feature in loan approval decisions. High credit history values strongly increase approval likelihood, while low values lead to rejection. Income and loan-related features have moderate influence, and demographic features such as dependents have minimal impact.

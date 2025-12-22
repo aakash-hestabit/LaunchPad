@@ -1,0 +1,21 @@
+{
+    "best_model_name": "Random Forest",
+    "best_score": 0.8051701110229199,
+    "best_method": "Optuna",
+    "best_hyperparameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "gini",
+        "max_depth": 7,
+        "max_features": "sqrt",
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 4,
+        "min_weight_fraction_leaf": 0.0,
+        "n_estimators": 212,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+    }
+}
