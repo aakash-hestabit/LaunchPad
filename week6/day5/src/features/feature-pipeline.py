@@ -7,6 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 import seaborn as sns
 import json
+import joblib 
 
 def load_data(file_path):
     return pd.read_csv(file_path)
@@ -36,12 +37,16 @@ def encode_categorical_features(df):
         columns=encoder.get_feature_names_out(categorical_cols),
         index=df.index
     )
-    
+    joblib.dump(encoder, 'src/models/encoder.pkl')
     return pd.concat([df.drop(columns=categorical_cols), encoded_df], axis=1)
 
 def scale_numerical_features(df, numerical_cols):
     scaler = StandardScaler()
     df[numerical_cols] = scaler.fit_transform(df[numerical_cols])
+    
+    
+    
+    joblib.dump(scaler, 'src/models/scaler.pkl')
     return df
 
 def remove_highly_correlated_features(df, threshold=0.9):
@@ -131,6 +136,8 @@ def feature_engineering_pipeline(df, target_column='Loan_Status'):
     
     selected_features_set = set(selected_features_mi).union(set(selected_features_rfe))
     selected_features = list(selected_features_set)
+
+    joblib.dump(selected_features, 'src/models/selected_features.pkl')
 
     save_processed_data(X_train[selected_features], X_test[selected_features], y_train, y_test, selected_features)
 

@@ -1,0 +1,13 @@
+2025-12-23 19:12:23,516 - INFO - All model assets and logs loaded successfully.
+2025-12-23 19:12:23,516 - INFO - Starting monitoring process...
+2025-12-23 19:12:23,519 - WARNING - DRIFT: Feature 'ApplicantIncome' (p=0.0004)
+2025-12-23 19:12:23,520 - WARNING - DRIFT: Feature 'CoapplicantIncome' (p=0.0198)
+2025-12-23 19:12:23,520 - WARNING - DRIFT: Feature 'LoanAmount' (p=0.0021)
+2025-12-23 19:12:23,520 - WARNING - DRIFT: Feature 'Dependents' (p=0.0431)
+2025-12-23 19:12:23,521 - WARNING - DRIFT: Feature 'Total_Income' (p=0.0009)
+2025-12-23 19:12:23,521 - WARNING - DRIFT: Feature 'Loan_Per_Term' (p=0.0008)
+2025-12-23 19:12:23,521 - INFO - Feature 'Property_Area_Semiurban': OK (p=0.0563)
+2025-12-23 19:12:23,522 - INFO - Feature 'Credit_History': OK (p=1.0000)
+2025-12-23 19:12:23,522 - WARNING - DRIFT: Feature 'Income_Ratio' (p=0.0001)
+2025-12-23 19:12:23,522 - INFO - Feature 'Loan_Amount_Term': OK (p=0.9866)
+2025-12-23 19:12:23,532 - INFO - Model Accuracy vs Logs: 100.00%

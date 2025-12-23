@@ -172,6 +172,9 @@ def run_all_tuners(config, X, y):
 
     # Pick the winner for this specific model type
     winner = max(results, key=lambda x: x[2])
+    
+    pd.set_option('display.max_columns', None)
+    print(X.head(10))
     return winner
 
 

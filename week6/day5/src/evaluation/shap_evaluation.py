@@ -8,7 +8,6 @@ from sklearn.decomposition import PCA
 import os
 
 def load_data():
-    """Loads processed datasets from the project directory."""
     X_train = pd.read_csv('src/data/processed/X_train.csv')
     X_test = pd.read_csv('src/data/processed/X_test.csv')
     y_train = pd.read_csv('src/data/processed/y_train.csv').values.flatten()

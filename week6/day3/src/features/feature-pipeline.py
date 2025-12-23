@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import json
 import os
+import joblib
 
 def load_data(file_path):
     return pd.read_csv(file_path)
@@ -95,6 +96,12 @@ def feature_engineering_pipeline(df, target_column='Loan_Status'):
     os.makedirs('src/data/processed', exist_ok=True)
     save_processed_data(X_train[selected_features], X_test[selected_features], y_train, y_test, selected_features)
     plot_feature_importance(X_train, y_train, selected_features)
+
+    joblib.dump(encoder, 'src/models/encoder.pkl')
+    
+    joblib.dump(scaler, 'src/models/scaler.pkl')
+
+    joblib.dump(selected_features, 'src/models/selected_features.pkl')
     
     return X_train[selected_features], X_test[selected_features], y_train, y_test, selected_features
 
