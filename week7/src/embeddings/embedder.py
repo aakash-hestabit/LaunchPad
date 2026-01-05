@@ -1,5 +1,4 @@
 from sentence_transformers import SentenceTransformer
-import numpy as np
 from src.config.settings import EMBEDDING_MODEL
 
 class Embedder:
@@ -8,7 +7,7 @@ class Embedder:
 
     def embed(self, chunks):
             
-        embeddings = self.model.encode(chunks,normalize_embeddings=True,show_progress_bar=True)
+        embeddings = self.model.encode(chunks,normalize_embeddings=True,show_progress_bar=True, batch_size=16)
         dimension = embeddings.shape[1]
 
         return embeddings,dimension
