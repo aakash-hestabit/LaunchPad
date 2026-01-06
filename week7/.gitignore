@@ -4,3 +4,4 @@ src/data/raw
 src/data/chunks
 src/data/images
 .env
+music_data.db
