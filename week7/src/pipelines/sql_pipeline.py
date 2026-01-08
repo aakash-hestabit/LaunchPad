@@ -30,35 +30,40 @@ class SQLPipeline:
         finally:
             conn.close()
 
-    def run(self, user_question):
+    def run(self, user_question, history):
         schema = self.schema_loader.get_schema_string()
         
         retries = 1
         last_error = None
-        sql = self.generator.generate_query(user_question, schema)
+        sql = self.generator.generate_query(user_question, schema, history)
 
         validation_retries = 2
 
         while(validation_retries>0):
-            validation_retries -= 1
-            verification = self.generator.verify_logic(user_question, sql, schema)
+            try:
+                validation_retries -= 1
+                verification = self.generator.verify_logic(user_question, sql, schema, history)
 
-            if "VALID" not in verification.upper():
-                if validation_retries<=0:
-                    raise Exception("The LLM was not able to generate Valid query.")
-                last_error = f"Logic verification failed: {verification}"
-                sql = self.generator.generate_query(user_question, schema, error_context=last_error)
-            else:
-                break
+                if "VALID" not in verification.upper():
+                    if validation_retries<=0:
+                        print(verification)
+                        raise Exception("The LLM was not able to generate Valid query.")
+                    last_error = f"Logic verification failed: {verification}"
+                    sql = self.generator.generate_query(user_question, schema, error_context=last_error, history = history)
+                else:
+                    break
+            except Exception as e:
+                return schema, {"status": "failed", "error": str(e), "sql": sql}
+
 
         while retries >= 0:
             try:
                 self.validate_sql(sql)
                 results = self.execute_safely(sql)
                 
-                summary = self.generator.summarize_results(user_question, results)
+                summary = self.generator.summarize_results(user_question, results, history)
                 
-                return {
+                return schema, {
                     "status": "success",
                     "sql": sql,
                     "results": results,
@@ -67,15 +72,14 @@ class SQLPipeline:
             
             except Exception as e:
                 if retries == 0:
-                    return {"status": "failed", "error": str(e), "sql": sql}
+                    return schema, {"status": "failed", "error": str(e), "sql": sql}
                 
                 last_error = str(e)
-                sql = self.generator.generate_query(user_question, schema, error_context=last_error)
+                sql = self.generator.generate_query(user_question, schema, error_context=last_error, history=history)
                 retries -= 1
 
 
-if __name__=='__main__':
-   
+def main(user_question:str, history):
     with open('src/config/model.yaml', 'r') as file:
         config_data = yaml.safe_load(file)
     client = OpenAI(
@@ -84,18 +88,19 @@ if __name__=='__main__':
     )
     model=config_data["model_name"]
     db_path = 'music_data.db'
-    user_question = 'What were the total sales by artist in 2023'
     generator = SQLGenerator(client, model)
-    query_result = SQLPipeline(db_path, generator).run(user_question)
-    if(query_result['status']=='failed'):
-        print("Try again!!")
-        print()
-        print(query_result['error'])
-    else:
-        print(f"question: {user_question}")
-        print()
-        print(f"sql generated: {query_result['sql']}")
-        print()
-        print(f"results: {query_result['results']}")
-        print()
-        print(f"summary: {query_result['answer']}")
+    schema, query_result = SQLPipeline(db_path, generator).run(user_question, history)
+
+    return schema, query_result
+    # if(query_result['status']=='failed'):
+    #     print("Try again!!")
+    #     print()
+    #     print(query_result['error'])
+    # else:
+    #     print(f"question: {user_question}")
+    #     print()
+    #     print(f"sql generated: {query_result['sql']}")
+    #     print()
+    #     print(f"results: {query_result['results']}")
+    #     print()
+    #     print(f"summary: {query_result['answer']}")

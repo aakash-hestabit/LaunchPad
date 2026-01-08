@@ -3,4 +3,6 @@ we start by programmatically extracting the database schema(also etracted the re
 
 i didn't want the model to have the power to modify data. i used keyword blacklisting for destructive commands like drop or delete and integrated sqlglot for strict syntax validation. to make the system more resilient, i tried to implement a self-healing mechanism: if a query fails execution or gets flagged by the logic check, i feed that specific error back to the model so it can try to fix its own mistake in a second pass.
 
+to get the query generated - `src/pipelines/sql-pipelines.py`
+--- 
 ![nlp to sql flowchart](sql_flow.png)

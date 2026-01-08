@@ -44,3 +44,6 @@ documents.
 Once the relevant document chunks are retrieved, they are fed into the generator, which uses a language model to generate a response. The generator takes the 
 query and the context from the retrieved chunks, using the combination to generate an accurate and contextually appropriate answer. The generator can pull from 
 different pieces of information within the retrieved chunks, ensuring that the response is comprehensive and informed by the most relevant parts of the document. 
+
+the complete flow is :
+![rag flow](image-2.png)

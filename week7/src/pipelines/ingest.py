@@ -62,5 +62,5 @@ def run_ingestion(doc, meta):
 #     with open(DATASTORE_PATH, "wb") as f:
 #         pickle.dump({"chunks": all_chunks_data, "bm25": bm25_model}, f)
 
-if __name__ == "__main__":
-    run_ingestion()
+# if __name__ == "__main__":
+#     run_ingestion()
