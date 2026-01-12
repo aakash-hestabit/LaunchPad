@@ -66,4 +66,4 @@ All the Containers are **Healthy**
 </p>
 
 **Screen Recording** 
-<a>https://drive.google.com/file/d/155VYnZt7IWzxvxlttPczRvXf80yqb7g4/view?usp=sharing</a>
+<a target='blank'>https://drive.google.com/file/d/155VYnZt7IWzxvxlttPczRvXf80yqb7g4/view?usp=sharing</a>
