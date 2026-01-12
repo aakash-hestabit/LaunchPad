@@ -1,3 +1,7 @@
+##### How to run -
+ run `docker compose -f src/docker/qdrant.yml up -d`
+ run `uvicorn src.deployment.app:app --host 0.0.0.0 --port 8000 --reload`
+
 ##### This system -
 -  Answers text-based questions using hybrid retrieval.
 

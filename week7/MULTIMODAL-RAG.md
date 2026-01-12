@@ -10,6 +10,8 @@ This system implements a production-grade Image RAG pipeline supporting:
 
 ## Architecture
 ### Ingestion:
+NOTE : i am using qdrant here and qdrant runs via docker, so i need to run `docker compose -f src/docker/qdrant.yml up -d`
+
 If we got Imges we ingest it as it is, but if we got PDF we follow a hybrid Approach in which we extract Text and Images from the pages and ingest these 
 separately, for text we use the ingestoin pipeline that was used in DAY2 and for Images we use the image ingestion in DAY3 
 Text -> Ingestion Pipeline used in Day 2 
