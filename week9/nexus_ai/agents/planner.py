@@ -41,12 +41,12 @@ Available Agents and Their Roles:
 - Coder: Code generation, architecture design, technical implementation
 - Critic: Review, critique, quality assessment, feedback
 - Optimizer: Performance optimization, efficiency improvements
-- Validator: Validation, testing, quality checks (should be near the end)
+- Validator: Validation of result and is the Solution alligned to user needs (should be near the end)
 - Reporter: Final report generation, documentation (should be last)
 
 AVAILABLE TOOLS FOR AGENTS:
 Coder: read/write source files, create JSON configs, inspect project structure.
-Analyst: read CSV/JSON data, compute column statistics, inspect data files.
+Analyst: read CSV/JSON/FILE data, compute column statistics, inspect data files and project structure.
 Optimizer: read and rewrite code/configs to improve performance and efficiency, inspect project structure.
 Reporter: read artifacts and logs, write reports and documentation.
 

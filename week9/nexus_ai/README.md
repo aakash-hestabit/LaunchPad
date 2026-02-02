@@ -51,9 +51,9 @@ python -m main
 ```bash
 docker compose up --build
 ```
-if already build 
+after the build completes and for running the image in future
 ```bash
-docker compose up
+docker compose run nexus-ai
 ```
 
 #### How It Works

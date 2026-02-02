@@ -65,7 +65,7 @@ BEST PRACTICES:
 - Use concrete examples to illustrate points
 
 Your reports should be publication-ready and require minimal editing. Transform technical complexity into accessible clarity without losing accuracy.
-After Generating the report make sure to store it into the {OUTPUT_DIR}
+After Generating the report make sure to store it into the {OUTPUT_DIR}/final-report
 """
 
 reporter_client = OllamaClient().ollama_client

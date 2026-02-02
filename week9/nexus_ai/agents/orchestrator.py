@@ -64,8 +64,7 @@ async def run_agent_with_retry(agent_name, instruction, global_context, user_que
     for attempt in range(MAX_RETRIES_PER_AGENT):
 
         retry_info = f"\nPREVIOUS FAILURE:\n{last_error}\nFix the issue.\n" if last_error else ""
-        memory_context = memory_manager.retrieve_context(agent_name)
-
+        global_context = compress_context(global_context)
         prompt = f"""
 SYSTEM GOAL (USER REQUEST):
 {user_query}
@@ -76,12 +75,10 @@ YOUR TASK:
 CONTEXT FROM PREVIOUS AGENTS:
 {global_context}
 
-MEMORY:
-{memory_context}
 {retry_info}
 """
-
         try:
+            print(f"\n running {agent_name} Agent")
             result = await agent.run(task=TextMessage(content=prompt, source="orchestrator"))
             output = result.messages[-1].content
 
@@ -121,10 +118,13 @@ async def execute_plan(execution_plan, user_query):
             global_context[res["agent"]] = res["output"]
 
             if res["agent"] == "Validator":
-                if "FAIL" in res["output"].upper():
+                if "FAIL" in res["output"].upper() or "REJECTED" in res["output"].upper():
                     raise Exception(f"VALIDATION_FAIL::{res['output']}")
 
     return global_context
+
+def compress_context(context, limit=1200):
+    return {k: v[:limit] for k, v in context.items()}
 
 
 async def run_autonomous_loop(initial_plan, user_query):
@@ -132,7 +132,7 @@ async def run_autonomous_loop(initial_plan, user_query):
     validator_feedback = None
 
     for attempt in range(MAX_PLAN_RETRIES):
-        print(f"\n===== AUTONOMOUS ATTEMPT {attempt+1}/{MAX_PLAN_RETRIES} =====")
+        print(f"\n ATTEMPT {attempt+1}/{MAX_PLAN_RETRIES} ")
 
         try:
             return await execute_plan(current_plan, user_query)

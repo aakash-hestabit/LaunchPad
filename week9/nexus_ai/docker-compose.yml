@@ -7,4 +7,4 @@ services:
     tty: true
     volumes:
       - ./logs:/app/logs
-      - ./nexus-output:/app/nexus-output
+      - ./nexus-output:/app/nexus_output

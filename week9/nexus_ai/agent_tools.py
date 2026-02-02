@@ -16,6 +16,7 @@ def get_analyst_tools():
         FunctionTool(tools.analyze_csv_columns, description="Get column statistics and insights",strict=True),
         FunctionTool(tools.read_json, description="Read JSON data for analysis",strict=True),
         FunctionTool(tools.list_directory, description="List files in provided directory",strict=True),
+        FunctionTool(tools.read_file, description="Read existing code files",strict=True),
         ]
 
 def get_optimizer_tools():

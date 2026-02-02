@@ -1,4 +1,5 @@
 nexus_output/
+nexus-output/
 logs/
 __pycache__/
 .env
