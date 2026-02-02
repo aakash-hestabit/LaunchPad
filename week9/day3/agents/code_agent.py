@@ -1,6 +1,6 @@
 from autogen_agentchat.agents import AssistantAgent
 from autogen_ext.models.openai import OpenAIChatCompletionClient
-from tools.code_executor import code_executor_tool
+from tools.code_executor import code_tool
 import os
 from dotenv import load_dotenv
 
@@ -19,7 +19,7 @@ model_client = OpenAIChatCompletionClient(
     base_url="https://api.groq.com/openai/v1",
     api_key=os.getenv("LLM_API_KEY"),
     model_info={
-        "family": "llama",
+        "family": "openai",
         "context_length": 8192,
         "function_calling": True,
         "vision": True,
@@ -38,9 +38,9 @@ You are a Python Code Execution Agent.
 RULES:
 - You CAN write new logic but ONLY if specefied EXPLICITLY. Otherwise You ONLY execute code exactly as provided.
 - You execute the Python code provided by the user.
-- You MUST always use the execute_python tool for code execution.
+- You MUST always use the tool for code execution.
 - You MUST return the real execution output.
 - If execution fails, return the full error traceback.
 """,
-    tools=[code_executor_tool],
+    tools=[code_tool],
 )

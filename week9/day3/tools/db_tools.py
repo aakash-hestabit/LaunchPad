@@ -107,3 +107,12 @@ Only SELECT / WITH queries are allowed.
 """,
     strict=True
 )
+
+extract_schema_tool = FunctionTool(
+    extract_schema,
+    name="extract_schema_tool",
+    description="""
+Extracts the SCHEMA of the given DATABASE
+""",
+    strict=True
+)

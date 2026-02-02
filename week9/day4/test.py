@@ -45,7 +45,7 @@ async def ask_agent():
 
         response = await Agent.run(
             task=TextMessage(
-                content=f"{context}\n\nUser Query: {user_input}",
+                content=f"STORED MEMORY RETRIEVALS: {context}\n Use the Retrieved Memory if relevant to User Query, And only respond to USER QUERY.\n\nUSER QUERY: {user_input}",
                 source="user"
             )
         )

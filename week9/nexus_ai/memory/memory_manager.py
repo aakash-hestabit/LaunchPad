@@ -84,8 +84,6 @@ Conversation:
             input=prompt,
         )
 
-        print(response.output_text)
-
         try:
             return safe_json_list(response.output_text)
         except:
@@ -162,8 +160,6 @@ Rules:
             model="openai/gpt-oss-20b",
             input=prompt,
         )
-
-        print(f"\n reconclie result: \n {res.output_text} \n")
 
         return safe_json_obj(res.output_text)
 

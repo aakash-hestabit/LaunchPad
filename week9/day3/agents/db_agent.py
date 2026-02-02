@@ -1,7 +1,7 @@
 from autogen_agentchat.agents import AssistantAgent
 from autogen_ext.models.openai import OpenAIChatCompletionClient
 from autogen_ext.models.ollama import OllamaChatCompletionClient
-from tools.db_tools import schema_query_tool, extract_schema
+from tools.db_tools import schema_query_tool, extract_schema_tool
 import os
 from dotenv import load_dotenv
 
@@ -32,25 +32,22 @@ model_client = OpenAIChatCompletionClient(
     parallel_tool_calls=False
 )
 
-schema = extract_schema("sales.db")
-
 
 DBAgent = AssistantAgent(
     name="DBAgent",
     model_client=model_client,
     system_message=f"""
 You are a Database Agent.
-DataBase Schema : {schema}
-You MUST always Query ONLY the Colums specified in the Schema.
 
 STRICT RULES:
 - You NEVER assume table or column names.
+- ALWAYS extract the DATABASE SCHEMA using the tool.
 - You MUST always use the schema_aware_query tool.
 - You ONLY generate SELECT or WITH SQL queries.
 - You MUST limit the number of rows where-ever possible.
 - You base your answer ONLY on tool results.
 - If the query fails, analyze the error and retry with a corrected query.
-- DataBase Path : sales.db
 """,
-    tools=[schema_query_tool]
+    tools=[extract_schema_tool, schema_query_tool],
+    max_tool_iterations=10
 )

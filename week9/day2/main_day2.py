@@ -135,59 +135,5 @@ async def main():
     print("['FINAL OUTPUT']")
 
 
-
-    # async for event in team.run_stream(task="START"):
-    #     print(event)
-    
-    # workers = []
-
-    # execution_tree.append([])
-
-    # for task in plan["tasks"]:
-    #     workers.append(WorkerAgent(task['worker_name']).run(task['task'], task['instructions'], execution_tree))
-
-    # worker_results = await asyncio.gather(*workers)
-
-
-    # combined_input = "\n\n".join(
-    #     f"Worker Output {i+1}:\n{output}"
-    #     for i, output in enumerate(worker_results)
-    # )
-
-    # execution_tree.append(["Running Reflector Agent"])
-    # response = await reflector.run(
-    #     task = TextMessage(
-    #         content=combined_input,
-    #         source="user"
-    #     )
-    # )
-
-    # reflected_answer = response.messages[-1].content
-
-    # validation_result = await ValidatorAgent().run(reflected_answer, execution_tree)
-
-    # try:
-    #     validation_result = json.loads(validation_result)
-    # except json.JSONDecodeError:
-    #     cleaned = validation_result.strip().replace("```json", "").replace("```", "")
-    #     validation_result = json.loads(cleaned)
-
-    # if validation_result['is_valid'] == True:
-    #     print(reflected_answer)
-    # else:
-    #     print("\n\nThe validation falied due to following reason.")
-    #     print(validation_result['issues'])
-
-    # print("\n\nExcecution Tree: \n\n")
-    # print(f"['{query}']")
-
-    # for level in execution_tree:
-    #     print("      | \n")
-    #     print(level)
-
-    # print("      | \n")
-    # print("['Final Output']\n")
-
-
 if __name__=="__main__":
     asyncio.run(main())

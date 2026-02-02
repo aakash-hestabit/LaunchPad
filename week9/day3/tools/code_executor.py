@@ -1,28 +1,8 @@
 from autogen_core.tools import FunctionTool
-import io
-import contextlib
-import traceback
+import asyncio
+from autogen_ext.code_executors.local import LocalCommandLineCodeExecutor
+from autogen_ext.tools.code_execution import PythonCodeExecutionTool
 
-def execute_python(code: str) -> str:
-    """
-    Execute Python code and return stdout or error.
-    This function MUST remain deterministic and side-effect free.
-    """
-    stdout = io.StringIO()
-
-    try:
-        with contextlib.redirect_stdout(stdout):
-            exec(code, {}, {})
-        output = stdout.getvalue()
-        return output if output.strip() else "Execution finished with no output."
-
-    except Exception:
-        return "Execution Error:\n" + traceback.format_exc()
-
-
-code_executor_tool = FunctionTool(
-    execute_python,
-    name="execute_python",
-    description="Execute Python code and return stdout or execution errors.",
-    strict=True
-)
+work_dir = "./code_output"
+executor = LocalCommandLineCodeExecutor(work_dir=work_dir, timeout=100)
+code_tool =  PythonCodeExecutionTool(executor)

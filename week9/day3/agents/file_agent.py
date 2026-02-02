@@ -35,6 +35,8 @@ FileAgent = AssistantAgent(
 You are a File Agent.
 You MUST follow the plan provided by orchestrator strictly.
 You can read and write .txt and .csv files using tools.
+You NEVER write code
+You NEVER query database
 (Database path to load the csv : "sales.db")
 RESPONSIBILITIES:
 - Inspect CSV structure (columns, row count)

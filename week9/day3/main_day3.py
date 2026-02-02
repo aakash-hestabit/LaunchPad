@@ -12,8 +12,6 @@ from agents.code_agent import CodeAgent
 from agents.db_agent import DBAgent
 from agents.file_agent import FileAgent
 import asyncio
-from tools.db_tools import extract_schema
-
 
 AgentName = Literal["FileAgent", "DBAgent", "CodeAgent"]
 
@@ -24,7 +22,6 @@ class PlanStep(BaseModel):
 class ExecutionPlan(BaseModel):
     steps: List[PlanStep]
 
-schema = extract_schema("sales.db")
 PLANNER_SYSTEM_PROMPT = f"""
 You are an Orchestrator Planner.
 
@@ -41,16 +38,16 @@ Each Agent is inpedendepnt and has specific roles
 - CodeAgent: can GENERATE and  EXECUTES Python code as provided
 
 STRICT RULES:
-- Each Agent has independent roles as specified.
+- Each Agent has independent roles as specified .
 - The ORDER OF CALLING OF AGENTS IS CRITICAL and Output messages are shared sequentially Only, so generate the tasks in dependency order if the agents are dependent on each other.
 - CSV data MUST be loaded into SQLite before  csv queries and analysis
 - NEVER analyze CSV directly
 - DBAgent must be used for all data analysis
 - CodeAgent is OPTIONAL and only for computation
+- FileAgent NEVER writes code or Queries
 - Do NOT skip required steps
+- ALWAYS provide the Database path to DBAgent
 - DO NOT generate SQL, Give Simple Command to DBAgent if required.
-- Database schema: {schema}
-- Each Task generated for DBAgent SHOULD be INDEPENDENT and SHOULD be achieveable through the provided schema.
 - Planner NEVER writes SQL queries.
 - Planner gives high-level analytical instructions ad DB path only.
 - DBAgent is responsible for converting instructions into SQL.
@@ -58,7 +55,6 @@ STRICT RULES:
 - Planner Should generate individual DBAgent tasks.
 Output must strictly follow the provided schema.
 Do not include explanations or extra text.
-DO NOT add commentary.
 ONLY return JSON.
 """
 
@@ -261,9 +257,9 @@ orchestrator = LLMOrchestrator(
 
 
 async def main():
-    user_query = "Analyze sales.csv and generate top 5 insights"
-    # user_query = "Write a python code to check 27 is prime or not and save the code and output in python.txt file"
-
+    # user_query = "Analyze sales.csv and generate top 5 insights"
+    user_query = "Write a python code to check 27 is prime or not , execute it and return the output"
+    
     result = await orchestrator.run(user_query)
 
     print(result)

@@ -1,0 +1,10 @@
+services:
+  nexus-ai:
+    build: .
+    env_file:
+      - .env
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./logs:/app/logs
+      - ./nexus-output:/app/nexus-output
